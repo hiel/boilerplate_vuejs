@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+const Main = () => import(/* webpackChunkName: "webMain" */ '@/components/main/Main')
 
 Vue.use(Router)
 
-export default new Router({
+// 라우터 생성
+const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+      name: 'Main',
+      redirect: { name: 'AllOrderList' },
+    },
+  ],
 })
+
+export default router
