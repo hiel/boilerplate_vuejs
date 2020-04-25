@@ -5,7 +5,7 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import store from './vuex'
-import './mixin/common'
+import './mixins/common'
 
 Vue.config.productionTip = false
 

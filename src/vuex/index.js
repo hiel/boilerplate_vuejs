@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import modules from './modules'
-import '../mixin/common'
+import '../mixins/common'
 
 Vue.use(Vuex)
 
