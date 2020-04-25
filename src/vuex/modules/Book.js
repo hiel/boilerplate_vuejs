@@ -1,7 +1,3 @@
-/**
- * Main Vuex
- */
-
 export default {
   namespaced: true,
   state: {
@@ -9,10 +5,10 @@ export default {
     bookList: [],
   },
   mutations: {
-    setBook: function (state, data) {
+    setBook (state, data) {
       state.book = data.book
     },
-    setBookList: function (state, data) {
+    setBookList (state, data) {
       state.bookList = data.bookList
     },
   },

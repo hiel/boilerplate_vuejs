@@ -12,7 +12,7 @@ const router = new Router({
     {
       path: '/',
       name: 'Main',
-      redirect: { name: 'AllOrderList' },
+      component: Main,
     },
   ],
 })
