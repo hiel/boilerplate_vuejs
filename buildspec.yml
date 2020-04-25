@@ -6,6 +6,6 @@ phases:
   build:
     commands:
       - npm run build
-  post_build:
-    commands:
+      - npm run copy
       - aws s3 cp --recursive dist/ s3://${S3_BUCKET_NAME}/
+      # - aws cloudfront create-invalidation --distribution-id "${DISTRIBUTION_ID}" --paths /index.html
