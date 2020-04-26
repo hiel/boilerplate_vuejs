@@ -4,6 +4,8 @@ import Cookies from 'js-cookie'
 Vue.mixin({
   data () {
     return {
+      token: null,
+      isLogin: false,
     }
   },
   methods: {
@@ -68,5 +70,14 @@ Vue.mixin({
       }
       window.location.href = url
     },
+  },
+  created () {
+    if (this.getCookie('token') === undefined) {
+      this.token = process.env.NO_MEMBER_TOKEN
+      this.isLogin = false
+    } else {
+      this.token = this.getCookie('token')
+      this.isLogin = true
+    }
   },
 })

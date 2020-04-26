@@ -41,16 +41,15 @@ Vue.mixin({
         headers: {},
       }
 
-      let userNo = this.getCookie('user_no')
-      let userId = this.getCookie('user_id')
-      let userName = this.getCookie('user_name')
-      let token = this.getCookie('token')
-
       let headers = {
-        'userNo': userNo,
-        'userId': userId,
-        'userName': encodeURIComponent(userName),
-        'token': token,
+        'token': this.token,
+      }
+
+      if (this.isLogin) {
+        headers['userNo'] = this.getCookie('user_no')
+        headers['userId'] = this.getCookie('user_id')
+        headers['userName'] = encodeURIComponent(this.getCookie('user_name'))
+        headers['token'] = this.getCookie('user_no')
       }
 
       config.headers = headers
