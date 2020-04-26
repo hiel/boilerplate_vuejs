@@ -14,7 +14,7 @@ export default {
   },
   actions: {
     getBook (context, payload) {
-      let url = this._vm.apiUrl + 'book'
+      let url = this._vm.apiUrl + '/book'
       url += '/' + payload['bookNo']
       delete payload['bookNo']
 
@@ -26,7 +26,7 @@ export default {
       })
     },
     getBookList (context, payload) {
-      let url = this._vm.apiUrl + 'book'
+      let url = this._vm.apiUrl + '/book'
 
       return new Promise((resolve, reject) => {
         this._vm.get(url, payload).then(response => {
@@ -36,7 +36,7 @@ export default {
       })
     },
     postBook (context, payload) {
-      let url = this._vm.apiUrl + 'book'
+      let url = this._vm.apiUrl + '/book'
 
       return new Promise((resolve, reject) => {
         this._vm.post(url, payload).then(response => {
@@ -45,7 +45,7 @@ export default {
       })
     },
     putBook (context, payload) {
-      let url = this._vm.apiUrl + 'book'
+      let url = this._vm.apiUrl + '/book'
       url += '/' + payload['bookNo']
       delete payload['bookNo']
 
@@ -56,7 +56,7 @@ export default {
       })
     },
     deleteBook (context, payload) {
-      let url = this._vm.apiUrl + 'book'
+      let url = this._vm.apiUrl + '/book'
       url += '/' + payload['bookNo']
       delete payload['bookNo']
 
